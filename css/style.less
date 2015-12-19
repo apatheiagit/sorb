@@ -10,24 +10,35 @@
 @grey-text: #7d7d7d;
 @white-text: #ebebeb;
 @green: #086142;
+@green-gradient: linear-gradient(#398f3b, #1f651c);
+@green-gradient-reverse: linear-gradient(#1f651c,#398f3b);
+@white-gradient: linear-gradient(#fffcfc, #e2ebf2);
+@white-gradient-reverse: linear-gradient(#e2ebf2,#fffcfc);
 @notebook: ~"(max-height: 800px)";
 @mobile: ~"(max-width: 768px)";
 @tablet: ~"(min-width: 768px) and (max-width: 992px)";
 @mobile_tablet: ~"(max-width: 992px)";
 @medium: ~"(max-width: 1200px)";
 
-body { background: #FFF; font-family: @font-family; font-size: @basic-font; font-weight: 400; color: @text-color;}
+body { background: white; font-family: @font-family; font-size: @basic-font; font-weight: 400; color: @text-color;}
 h1,h2,h3,h4,h6,h6,p,ul,li {margin: 0; padding:0px; }
 a, a:hover { color: inherit;}
 
 .somit-header{
 	position: relative;
-	&.fixed{
-		position: fixed;
-		top: 0;
+	height: 150px;
+	& .main-header{
+		position: absolute;
+		width: 100%;
+		z-index: 1000;
+		&.fixed{
+			position: fixed;
+			top: 0;		
+		}
 	}
 }
 .top-header{
+	background: white;
 	color: @green-text;
 	min-height: 90px;
 	padding-top: 22px;		
@@ -46,6 +57,9 @@ a, a:hover { color: inherit;}
 		& .phone-number{			
 			font-size: 16px;
 		}
+		@media @mobile_tablet{
+			margin-left: 0px;
+		}
 	}
 	.somit-footer &{
 		background: url(../img/bg-phone-white.png) no-repeat left center;
@@ -60,6 +74,7 @@ a, a:hover { color: inherit;}
 			line-height: 1;
 			@media @medium{
 				font-size: 22px;
+				line-height: 1.5;
 			}
 		}
 	}
@@ -76,7 +91,7 @@ a, a:hover { color: inherit;}
 		padding: 6px 8px;
 		text-transform: uppercase;
 		&.current{
-			background: linear-gradient(#437b46, #1e693e);
+			background: @green-gradient;
 			border-radius: 50%;
 			color: @white-text;
 			cursor: default;
@@ -96,7 +111,10 @@ a, a:hover { color: inherit;}
 		float: right;
 		margin-top: 8px;
 		& a{
-			border: 1px solid @green;			
+			border: 1px solid @green;
+			@media @mobile{
+				padding: 6px 10px;
+			}			
 		}
 	}
 	.somit-footer &{
@@ -105,6 +123,9 @@ a, a:hover { color: inherit;}
 		float: left;
 		& a{
 			border: 1px solid @white-text;			
+		}
+		@media @medium{
+			margin-left: 0px;
 		}
 	}
 }
@@ -165,17 +186,23 @@ a, a:hover { color: inherit;}
 			font-size: 14px;
 			margin-right: 20px;
 			padding: 12px 0;
+			@media @medium{
+				margin-right: 10px;
+			}
 		}
 	}
 }
 .somit-footer{
-	background: url(../img/bg-footer.png) center top;
+	background: url(../img/bg-footer.jpg) center top;
 	color: @white-text;
 	padding: 60px 0 50px;
 	& .copyright{
 		font-size: 14px;
 		font-family: @font-condensed;
 		margin-top: 20px;
+		@media @medium{
+			font-size: 12px;
+		}
 	}
 	& .address-block{
 		font-size: 14px;
@@ -185,22 +212,218 @@ a, a:hover { color: inherit;}
 }
 
 .somit-bonnet{
-	max-width: 100%;
-	overflow: hidden;
 	position: relative;
-	height: 500px;
+	& .owl-element{
+		position: relative;
+		height: 500px;
+		overflow: hidden;
+		max-width: 100%;
+	}
 	& .bonnet-container{
 		width: 2894px;
   	position: absolute;
   	left: 50%;
   	top: 0;
   	margin-left: -1447px;
+  	z-index: 2;
 	  & img{
 	  	display: block;
 	  	margin: 0 auto;
 	  }
 	}
+	& .text-container{
+		padding-top: 120px;
+		position: relative;
+		z-index: 10;
+		& .title-xl{
+			max-width: 370px;
+		}
+	}
+	& .owl-controls{
+		margin-top: -25px;
+		text-align: center;
+		position: relative;
+		& .owl-dot {
+	    display: inline-block;
+			& span {
+		    background: white;
+		    border-radius: 1px;
+		    display: block;
+		    height: 5px;
+		    margin: 7px 7px 8px;
+		    width: 24px;
+		  }
+		}
+	}
 }
 .somit-content{
 	min-height: 500px;
+}
+.title-green{
+	color: @green-text;
+}
+.title-white{
+	color: @white-text;
+}
+.title-lg{
+	font-size: 35px;
+	font-weight: 300;
+	margin: 30px 0;
+	position: relative;
+	padding-bottom: 30px;
+	text-transform: uppercase;
+	&:before{
+		border-radius: 2px;
+    bottom: 0;
+		content: ""; 
+    height: 4px;	    
+    left: 50%;
+    margin-left: -60px;
+    position: absolute;
+    width: 120px;
+	}
+	&.title-green{		
+		&:before{
+			background: @green;		
+		}
+	}
+	&.title-white{		
+		&:before{
+			background: @white-text;			
+		}
+	}
+}
+.title-xl{
+	font-size: 35px;
+	font-weight: 300;
+	font-family: @font-condensed;
+	line-height: 1.5;
+	margin: 40px 0;
+	text-transform: uppercase;
+}
+.title-md{
+	font-size: 18px;
+	font-family: @font-title;
+	font-weight: 600;
+	margin: 10px 0;
+	text-transform: uppercase;
+}
+.title-sm{
+	font-size: 18px;
+	font-weight: 600;
+	line-height: 1.2;	
+	margin: 10px 0;
+}
+.text-grey{
+	color: @grey-text;
+}
+.text-white{
+	color: @white-text;
+}
+.announce-lg{
+	font-size: 18px;
+}
+.announce-md{
+	line-height: 1.4;
+}
+.somit-spruce{
+	background: url(../img/bg-spruce.jpg) center no-repeat;
+}
+.somit-earth{
+	background: url(../img/bg-map.jpg) center top no-repeat @green;
+}
+.somit-pattern{
+	background: url(../img/bg-pattern.png) repeat;
+}
+.block-equipments{
+	background: white;
+	border-radius: 0 0 10px 10px;
+	box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+	padding: 0px 70px;
+	max-width: 1300px;
+	margin: 0 auto 10px;
+}
+.block-more{
+	margin: 30px 0 40px;
+}
+.block-about{
+	& .block-more{
+		margin: 30px 0 20px;
+	}
+}
+.block-boxes{
+	display: inline-block;
+	margin: 0 auto 20px;
+}
+.block-onmain{
+	border-radius: 10px;
+	box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+	margin: 40px auto;
+	position: relative;
+	overflow: hidden;
+	max-width: 340px;
+	& .block-photo{
+		position: absolute;
+		z-index: 0;
+		& .colour{
+			display: none;
+		}
+		& .sepia{
+			display: block;
+		}
+	}
+	& .block-content{
+		padding: 245px 15px 25px;
+		position: relative;
+		z-index: 100;
+	}
+	& .block-text{
+		min-height: 125px;
+	}
+	&:hover{
+		& .colour{
+			display: block;
+		}
+		& .sepia{
+			display: none;
+		}
+	}
+}
+.block-news{
+	& .date{
+		font-size: 12px;
+	}
+}
+.buttn{
+	border-radius: 30px;
+	display: inline-block;
+	font-size: 14px;
+	font-family: @font-condensed;
+	padding: 6px 20px;
+	text-transform: uppercase;
+	&:hover{
+		text-decoration: none;
+	}
+}
+.buttn-green{
+	background: @green-gradient;
+	color: @white-text;
+	&:hover{
+		background: @green-gradient-reverse;
+		color: @white-text;
+	}
+}
+.buttn-white{
+	background: @white-gradient;
+	color: @green-text;
+	font-size: 16px;
+	padding: 8px 20px;
+	&:hover{
+		background: @white-gradient-reverse;
+		color: @green-text;
+	}
+}
+.buttn-greenborder{
+	border: 1px solid @green;
+	color: @green-text;
 }
