@@ -433,6 +433,12 @@ a:hover {
   position: absolute;
   z-index: 0;
 }
+.block-onmain .block-photo .sepia,
+.block-onmain .block-photo .sepia-color {
+  left: 0;
+  position: absolute;
+  top: 0;
+}
 .block-onmain .block-photo .colour {
   display: none;
 }
