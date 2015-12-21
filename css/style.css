@@ -230,37 +230,60 @@ a:hover {
   background: url(../img/bg-lupa-white.png) no-repeat center;
   border: 1px solid #ebebeb;
 }
-.main-menu ul {
-  margin-left: 15px;
-}
 .main-menu ul li {
   display: inline-block;
   font-family: 'RobotoCondensed', sans-serif;
   list-style: none;
   text-transform: uppercase;
 }
+.main-menu ul a:hover {
+  text-decoration: none;
+}
 .bottom-header .main-menu li {
   font-size: 17px;
-  margin-right: 30px;
   font-weight: 300;
-  padding: 18px 0;
+  position: relative;
+}
+.bottom-header .main-menu li > a {
+  display: inline-block;
+  padding: 18px 15px;
 }
 @media (max-width: 1200px) {
-  .bottom-header .main-menu li {
-    margin-right: 10px;
+  .bottom-header .main-menu li > a {
+    padding: 18px 5px;
   }
+}
+.bottom-header .main-menu li:hover {
+  background: #e6e6e6;
+}
+.bottom-header .main-menu li:hover > a {
+  color: #005a37;
+}
+.bottom-header .main-menu li > ul {
+  display: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 60px;
+  width: auto;
+  white-space: nowrap;
+}
+.bottom-header .main-menu li > ul li {
+  background: #e6e6e6;
+  font-size: 16px;
+  position: relative;
+  text-transform: none;
 }
 .somit-footer .main-menu ul {
   margin-left: 0px;
 }
 .somit-footer .main-menu li {
   font-size: 14px;
-  margin-right: 20px;
-  padding: 12px 0;
+  padding: 12px 10px;
 }
 @media (max-width: 1200px) {
   .somit-footer .main-menu li {
-    margin-right: 10px;
+    padding: 12px 5px;
   }
 }
 .somit-footer {

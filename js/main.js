@@ -4,6 +4,17 @@ $(document).ready(function(){
   	items: 1,
   	loop: true,
   });
+  $('.main-menu-top ul li').hover(function(){
+      $(this).children('.second-menu').show();
+    },function(){
+      $(this).children('.second-menu').hide();
+  });
+  $('.main-menu-top ul.second-menu li').hover(function(){
+      $(this).children('.third-menu').show();
+    },function(){
+      $(this).children('.third-menu').hide();
+  });
+
   var options = {
       onError: function() {  console.log('ERROR'); }
   };
