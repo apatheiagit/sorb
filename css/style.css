@@ -393,13 +393,19 @@ a:hover {
   text-transform: uppercase;
 }
 .title-md {
+  font-size: 24px;
+  font-weight: 300;
+  margin: 30px 0;
+  text-transform: uppercase;
+}
+.title-sm {
   font-size: 18px;
   font-family: 'Casper', sans-serif;
   font-weight: 600;
   margin: 10px 0;
   text-transform: uppercase;
 }
-.title-sm {
+.title-xs {
   font-size: 18px;
   font-weight: 600;
   line-height: 1.2;
@@ -517,4 +523,45 @@ a:hover {
 .buttn-greenborder {
   border: 1px solid #086142;
   color: #005a37;
+}
+.somit-top_photo {
+  background-position: center top;
+  background-repeat: no-repeat;
+  height: 270px;
+}
+.somit-top_photo .container {
+  position: relative;
+  height: 100%;
+}
+.somit-top_photo .main-title {
+  bottom: 25px;
+  color: #ebebeb;
+  font-size: 35px;
+  font-family: 'RobotoCondensed', sans-serif;
+  left: 15px;
+  margin: 0;
+  position: absolute;
+}
+.bx_breadcrumbs {
+  margin: 10px 0;
+}
+.bx_breadcrumbs li {
+  display: inline-block;
+  font-size: 12px;
+  list-style: none;
+  line-height: 20px;
+}
+.bx_breadcrumbs li span {
+  color: #005a37;
+}
+.bx_breadcrumbs li:before {
+  color: #464646;
+  content: "\2014\00a0";
+  margin: 0 4px;
+}
+.bx_breadcrumbs li:first-child:before {
+  display: none;
+}
+.somit-grey {
+  background: #f6f6f6;
 }
