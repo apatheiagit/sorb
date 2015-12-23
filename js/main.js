@@ -14,6 +14,7 @@ $(document).ready(function(){
     },function(){
       $(this).children('.third-menu').hide();
   });
+  $('.right-side').height($('.somit-static').height());
 
   var options = {
       onError: function() {  console.log('ERROR'); }
