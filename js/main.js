@@ -4,6 +4,9 @@ $(document).ready(function(){
   	items: 1,
   	loop: true,
   });
+  var width100per = $('.bottom-header .container').width();
+  $('.second-menu').width(width100per);
+  $('.third-menu').width(width100per);
   $('.main-menu-top ul li').hover(function(){
       $(this).children('.second-menu').show();
     },function(){

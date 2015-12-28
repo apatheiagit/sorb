@@ -161,6 +161,7 @@ a, a:hover { color: inherit;}
 }
 .main-menu{
 	& ul{
+		position: relative;
 		& li{
 			display: inline-block;
 			font-family: @font-condensed;						
@@ -174,8 +175,7 @@ a, a:hover { color: inherit;}
 	.bottom-header &{
 		& li{
 			font-size: 17px;
-			font-weight: 300;
-			position: relative;			
+			font-weight: 300;						
 			&>a{
 				display: inline-block;
 				padding: 18px 15px;
@@ -190,21 +190,49 @@ a, a:hover { color: inherit;}
 				}			
 			}
 			&>ul{				
+				background: @grey;
+				border-radius: 0 0 4px 4px;
 				display: none;
 				position: absolute;
 				left: 0;
 			    right: 0;
 			    top: 60px;
-				width: auto;
+				width: 100%;
 				white-space: nowrap;
-				& li{	
-					background: @grey;
-					font-size: 16px;	
-					position: relative;				
-					text-transform: none;
+				& li{						
+					font-family: @font-family;
+					font-size: 16px;				
+					text-transform: none;					
+					&:hover{
+						background: transparent;
+						&>a{
+							border: 1px solid @green;
+							border-radius: 4px;
+							color: @green-text;	
+						}
+					}
 					& a{
+						border: 1px solid transparent;
+						padding: 8px 7px;
+						margin: 10px 8px;
+					}
+					& ul{
+						background: rgba(0,0,0,0.5);
+						border-radius: 0 0 4px 4px;
+						& li{
+							color: @white-text;
+							font-size: 14px;
+							&:hover{
+								& a{
+									border: 1px solid transparent;
+									color: @white-text;
+									text-decoration: underline;
+								}
+							}
+						}
 					}
 				}
+
 			}
 		}
 	}

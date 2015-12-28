@@ -230,6 +230,9 @@ a:hover {
   background: url(../img/bg-lupa-white.png) no-repeat center;
   border: 1px solid #ebebeb;
 }
+.main-menu ul {
+  position: relative;
+}
 .main-menu ul li {
   display: inline-block;
   font-family: 'RobotoCondensed', sans-serif;
@@ -242,7 +245,6 @@ a:hover {
 .bottom-header .main-menu li {
   font-size: 17px;
   font-weight: 300;
-  position: relative;
 }
 .bottom-header .main-menu li > a {
   display: inline-block;
@@ -260,19 +262,46 @@ a:hover {
   color: #005a37;
 }
 .bottom-header .main-menu li > ul {
+  background: #e6e6e6;
+  border-radius: 0 0 4px 4px;
   display: none;
   position: absolute;
   left: 0;
   right: 0;
   top: 60px;
-  width: auto;
+  width: 100%;
   white-space: nowrap;
 }
 .bottom-header .main-menu li > ul li {
-  background: #e6e6e6;
+  font-family: 'Roboto', sans-serif;
   font-size: 16px;
-  position: relative;
   text-transform: none;
+}
+.bottom-header .main-menu li > ul li:hover {
+  background: transparent;
+}
+.bottom-header .main-menu li > ul li:hover > a {
+  border: 1px solid #086142;
+  border-radius: 4px;
+  color: #005a37;
+}
+.bottom-header .main-menu li > ul li a {
+  border: 1px solid transparent;
+  padding: 8px 7px;
+  margin: 10px 8px;
+}
+.bottom-header .main-menu li > ul li ul {
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 0 0 4px 4px;
+}
+.bottom-header .main-menu li > ul li ul li {
+  color: #ebebeb;
+  font-size: 14px;
+}
+.bottom-header .main-menu li > ul li ul li:hover a {
+  border: 1px solid transparent;
+  color: #ebebeb;
+  text-decoration: underline;
 }
 .somit-footer .main-menu ul {
   margin-left: 0px;
